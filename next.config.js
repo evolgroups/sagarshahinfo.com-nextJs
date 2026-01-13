@@ -1,26 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable image optimization for external domains
+  // Enable static export for Cloudflare Pages
+  output: 'export',
+  
+  // Disable image optimization for static export
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'drive.google.com',
-        pathname: '/thumbnail/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'media.licdn.com',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'static.licdn.com',
-        pathname: '/**',
-      },
-    ],
-    // Fallback for unoptimized images
-    unoptimized: false,
+    unoptimized: true,
   },
   
   // Enable React strict mode for better development experience
@@ -31,6 +16,9 @@ const nextConfig = {
   
   // Compress responses
   compress: true,
+  
+  // Trailing slash for Cloudflare Pages
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
