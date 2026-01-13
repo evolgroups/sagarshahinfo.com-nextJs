@@ -41,6 +41,7 @@ export default function AnimatedCounter({
     }
 
     return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasAnimated]);
 
   const animateCount = () => {

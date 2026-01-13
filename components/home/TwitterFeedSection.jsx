@@ -100,7 +100,7 @@ export default function TwitterFeedSection() {
                 <span className="text-sm font-medium text-sky-700">Latest Updates</span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
-                <span className="gradient-text">What I'm Sharing</span>
+                <span className="gradient-text">What I&apos;m Sharing</span>
               </h2>
               <p className="text-neutral-500 text-lg">Stay connected with my latest thoughts and updates on X</p>
             </div>

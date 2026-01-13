@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { LayoutGrid, Utensils, Calendar, Building, Camera, X, ZoomIn } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
@@ -38,13 +38,13 @@ export default function CorporateGallery() {
     setSelectedImage(null);
   };
 
-  const navigate = (direction) => {
+  const navigate = useCallback((direction) => {
     const newIndex = direction === 'next'
       ? (currentIndex + 1) % filteredGallery.length
       : (currentIndex - 1 + filteredGallery.length) % filteredGallery.length;
     setCurrentIndex(newIndex);
     setSelectedImage(filteredGallery[newIndex]);
-  };
+  }, [currentIndex, filteredGallery]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function CorporateGallery() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage, currentIndex]);
+  }, [selectedImage, currentIndex, navigate]);
 
   return (
     <>

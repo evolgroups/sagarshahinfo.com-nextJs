@@ -21,12 +21,13 @@ export default function LinkedInCard() {
       >
         {/* Profile Picture */}
         <div className="absolute -bottom-12 left-4">
-          <img
+          <Image
             src="https://media.licdn.com/dms/image/v2/C5103AQEeFqPZw3tssg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1572867943112?e=2147483647&v=beta&t=hmIQ2mp8mDywRdzkVV3KwxBVg1J1U6beUrAj0VNxcf0"
             alt="Sagar Shah LinkedIn"
             width={104}
             height={104}
             className="rounded-full border-4 border-white shadow-lg object-cover"
+            unoptimized
           />
         </div>
       </div>
@@ -51,20 +52,29 @@ export default function LinkedInCard() {
 
         {/* Mutual Connections */}
         <div className="flex -space-x-2 mt-4">
-          <img
+          <Image
             src="https://randomuser.me/api/portraits/women/44.jpg"
             alt="Connection"
+            width={32}
+            height={32}
             className="w-8 h-8 rounded-full border-2 border-white object-cover"
+            unoptimized
           />
-          <img
+          <Image
             src="https://randomuser.me/api/portraits/women/68.jpg"
             alt="Connection"
+            width={32}
+            height={32}
             className="w-8 h-8 rounded-full border-2 border-white object-cover"
+            unoptimized
           />
-          <img
+          <Image
             src="https://randomuser.me/api/portraits/men/32.jpg"
             alt="Connection"
+            width={32}
+            height={32}
             className="w-8 h-8 rounded-full border-2 border-white object-cover"
+            unoptimized
           />
         </div>
 

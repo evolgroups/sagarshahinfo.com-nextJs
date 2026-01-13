@@ -45,7 +45,6 @@ export async function POST(request) {
     // === SECURITY CHECK 1: Honeypot ===
     // If honeypot field is filled, it's a bot
     if (website) {
-      console.log('Bot detected: Honeypot field filled');
       // Return success to not alert the bot
       return NextResponse.json({ success: true }, { status: 200 });
     }
@@ -54,7 +53,6 @@ export async function POST(request) {
     // If form was submitted too quickly (< 3 seconds), likely a bot
     const timeDiff = Date.now() - (formLoadTime || 0);
     if (timeDiff < 3000) {
-      console.log('Bot detected: Form submitted too quickly');
       return NextResponse.json(
         { error: 'Please take your time filling out the form.' },
         { status: 400 }

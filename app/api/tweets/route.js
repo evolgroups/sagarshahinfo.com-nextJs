@@ -32,7 +32,6 @@ export async function GET() {
     const username = process.env.TWITTER_USERNAME || 'sagarshah07';
 
     if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
-      console.error('Twitter API credentials not configured');
       return NextResponse.json(
         {
           success: false,
